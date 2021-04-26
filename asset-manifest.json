@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/reactPharma/static/css/main.132740c5.chunk.css",
+    "main.js": "/reactPharma/static/js/main.9f289250.chunk.js",
+    "main.js.map": "/reactPharma/static/js/main.9f289250.chunk.js.map",
+    "runtime-main.js": "/reactPharma/static/js/runtime-main.88ca3aa2.js",
+    "runtime-main.js.map": "/reactPharma/static/js/runtime-main.88ca3aa2.js.map",
+    "static/js/2.09621ac0.chunk.js": "/reactPharma/static/js/2.09621ac0.chunk.js",
+    "static/js/2.09621ac0.chunk.js.map": "/reactPharma/static/js/2.09621ac0.chunk.js.map",
+    "static/js/3.8ce12b58.chunk.js": "/reactPharma/static/js/3.8ce12b58.chunk.js",
+    "static/js/3.8ce12b58.chunk.js.map": "/reactPharma/static/js/3.8ce12b58.chunk.js.map",
+    "index.html": "/reactPharma/index.html",
+    "static/css/main.132740c5.chunk.css.map": "/reactPharma/static/css/main.132740c5.chunk.css.map",
+    "static/js/2.09621ac0.chunk.js.LICENSE.txt": "/reactPharma/static/js/2.09621ac0.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.88ca3aa2.js",
+    "static/js/2.09621ac0.chunk.js",
+    "static/css/main.132740c5.chunk.css",
+    "static/js/main.9f289250.chunk.js"
+  ]
+}
