@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {useHistory} from "react-router-dom";
+import { useSelector } from "react-redux";
 import "./addSales.css"
 
 const AddSales = () => {
@@ -11,17 +12,34 @@ const [gender, setGender] = useState();
 const [expYrs, setExpYrs] = useState();
 
 const history = useHistory();
+const getEditData = useSelector(state => state.editData);
+console.log(getEditData);
+const getEditDataIndex = useSelector(state => state.editDataIndex);
+console.log(getEditDataIndex);
+
+
 let addSalesData;
 useEffect(() => {
     addSalesData = JSON.parse(localStorage.getItem("addSales"))  
     if(!addSalesData){
         localStorage.setItem("addSales", JSON.stringify([]))
     }
-},[])
-   
+},[]);
+useEffect(() => {
+  if(getEditData.id){
+    console.log(getEditData);
+    setFirstName(getEditData.firstName);
+    setLastName(getEditData.lastName);
+    setDob(getEditData.dob);
+    setGender(getEditData.gender);
+    setExpYrs(getEditData.expYrs);
+    }
+},[getEditData])
+let id = Date.now();
   const addSalesSubmit =(e) => {
     if(firstName && lastName && gender && dob && expYrs){
       let addSalesObject = {
+        id,
         firstName,
         lastName,
         dob,
@@ -29,10 +47,16 @@ useEffect(() => {
         expYrs,
       }
       let addSalesData = JSON.parse(localStorage.getItem("addSales"))  
+      if(getEditData.id){
+        addSalesData[getEditDataIndex] = addSalesObject;
+      } else {
       addSalesData.push(addSalesObject);
+      }
         console.log(addSalesData,"1111111111111>>>>>>>>>>>>>>");
         localStorage.setItem("addSales", JSON.stringify(addSalesData));
-      history.push("/admin")
+      history.push("/teams");
+      window.location.reload();
+
     } else{
     alert("Fill All The Details Correctly")
   }

@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { loginAdmin,loginSales } from "../redux/action";
 import "./logIn.css";
 
@@ -15,7 +15,7 @@ import "./logIn.css";
 const submitForm = () => {
     if(username === "test-admin" && password === "test-admin"){
         dispatch(loginAdmin())
-        history.push("/admin")
+        history.push("/inventory")
     } else if(username === "test-sales" && password === "test-sales"){
         dispatch(loginSales())
         history.push("/sales")

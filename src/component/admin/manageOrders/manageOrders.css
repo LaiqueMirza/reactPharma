@@ -1,21 +1,21 @@
-.salesHeadDiv{
+.manageOrdersHeadDiv{
     display: flex;
     justify-content: space-around;
     align-items: baseline;
     margin-bottom: 30px;
 }
-.salesHeadSecondDiv{
+.manageOrdersHeadSecondDiv{
     display: flex;
     align-items: baseline;
 }
-.salesHeadSecondDiv i{
+.manageOrdersHeadSecondDiv i{
     font-size: 32px;
     margin-right: 10px;
 }
-.salesHeadDiv h2{
+.manageOrdersHeadDiv h2{
     font-size: 32px;
 }
-.salesButton{
+.manageOrdersButton{
     margin: 0;
     padding: 7px 20px;
     font-size: 14px;
@@ -24,23 +24,23 @@
     background-color: #080708;
     border-radius: 5px;
 }
-.salesButton:hover{
+.manageOrdersButton:hover{
     background-color: #072AC8;
 }
-.sales-table{
+.manageOrders-table{
     width: 80%;
     margin: 0 auto;
     border: 1px solid #080708;
 }
 
-.sales-table th{
+.manageOrders-table th{
     font-size: 16px;
     padding: 15px;
     border: 1px solid #080708;
 }
 
 
-.sales-table td{
+.manageOrders-table td{
     font-size: 16px;
     border: 1px solid #080708;
     text-align: center;

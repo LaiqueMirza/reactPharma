@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux'
 import { createStore } from 'redux';
 import allReducers from './component/redux/reducer';
-
+// import 'semantic-ui-css/semantic.min.css';
 const store = createStore(allReducers)
 
 ReactDOM.render(

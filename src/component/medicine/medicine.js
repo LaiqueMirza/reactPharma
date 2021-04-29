@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {useHistory} from "react-router-dom";
+import { useSelector } from "react-redux";
 import "./medicine.css"
 
 const Medicine = () => {
@@ -11,17 +12,34 @@ const [discount, setDiscount] = useState();
 const [stock, setStock] = useState();
 
 const history = useHistory();
+const getEditData = useSelector(state => state.editData);
+console.log(getEditData);
+const getEditDataIndex = useSelector(state => state.editDataIndex);
+console.log(getEditDataIndex);
+
 let medicineData;
 useEffect(() => {
     medicineData = JSON.parse(localStorage.getItem("medicine"))  
     if(!medicineData){
         localStorage.setItem("medicine", JSON.stringify([]))
     }
+    
 },[])
-   
+useEffect(() => {
+  if(getEditData.id){
+    console.log(getEditData);
+      setName(getEditData.name);
+      setManufacturerName(getEditData.manufacturerName);
+      setPrice(getEditData.price);
+      setDiscount(getEditData.discount);
+      setStock(getEditData.stock);
+    }
+},[getEditData])
+   let id = Date.now();
   const medicineSubmit =(e) => {
     if(name && manufacturerName && discount && price && stock){
       let medicineObject = {
+        id,
         name,
         manufacturerName,
         price,
@@ -29,16 +47,23 @@ useEffect(() => {
         stock,
       }
       let medicineData = JSON.parse(localStorage.getItem("medicine"))  
-      medicineData.push(medicineObject);
+      if(getEditData.id){
+        medicineData[getEditDataIndex] = medicineObject;
+      } else {
+        medicineData.push(medicineObject);
+      }
         console.log(medicineData,"1111111111111>>>>>>>>>>>>>>");
         localStorage.setItem("medicine", JSON.stringify(medicineData));
-      history.push("/admin")
+        history.push("/inventory")
+      
+        window.location.reload();
     } else{
     alert("Fill All The Details Correctly")
   }
   }
 //   Name, Manufacturer Name, Price, Stock, Discount
     return ( <div className="medicineDiv">
+
   <h2>ADD NEW MEDICINE</h2>
          <div 
          className="medicine-form"

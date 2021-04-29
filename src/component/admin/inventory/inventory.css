@@ -4,6 +4,14 @@
     align-items: baseline;
     margin-bottom: 30px;
 }
+.inventoryHeadSecondDiv{
+    display: flex;
+    align-items: baseline;
+}
+.inventoryHeadSecondDiv i{
+    font-size: 32px;
+    margin-right: 10px;
+}
 .inventoryHeadDiv h2{
     font-size: 32px;
 }
@@ -42,4 +50,10 @@
 .deleteIcon{
     font-size: 22px;
     color: rgb(119, 8, 8);
+    cursor: pointer;
+}
+.editIcon{
+    font-size: 22px;
+    color: #119DA4;
+    cursor:pointer;
 }
